@@ -7,7 +7,7 @@ require_once 'BaseModel.php';
 
 class Ads extends BaseModel {
 
-	protected static $table = 'users';
+	protected static $table = 'ads';
 
 	protected function update()
     {
@@ -19,7 +19,7 @@ class Ads extends BaseModel {
         $stmt->bindValue(':id', 		$this->id, 				PDO::PARAM_STR);
         $stmt->bindValue(':headline', 	$this->headline, 		PDO::PARAM_STR);
         $stmt->bindValue(':price', 		$this->price, 			PDO::PARAM_STR);
-        $stmt->bindValue(':size', 		$this->size, 			PDO::PARAM_STR);
+        // $stmt->bindValue(':size', 		$this->size, 			PDO::PARAM_STR);
         $stmt->bindValue(':category', 	$this->category, 		PDO::PARAM_STR);
         $stmt->bindValue(':description', $this->description, 	PDO::PARAM_STR);
         $stmt->bindValue(':contact', 	$this->contact, 		PDO::PARAM_STR);
