@@ -50,35 +50,5 @@ class Ads extends BaseModel {
         
     }
 
-       public static function all()
-    {
-        self::dbConnect();
-        
-        $query  = 'SELECT * FROM ads';
-        
-        $results = self::$dbc->query($query)->fetchAll(PDO::FETCH_ASSOC);
-        return $resultsAds;
-      
-    }
-
-        public function delete()
-    {
-        $id = $this->attributes['id'];
-        $query = "DELETE FROM ads
-        WHERE id = :id";
-        
-        $stmt = self::$dbc->prepare($query);
-        
-        $stmt->bindValue(':id', $id, PDO::PARAM_STR);
-        
-        $stmt->execute();
-        
-        echo "Deleted contact found at ID : " . $id;
-    }
 }
-
-}
-
-
-
 

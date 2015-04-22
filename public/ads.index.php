@@ -49,10 +49,14 @@ extract(pageController());
 </header>
 <!-- php foreach $ads as $ad, php each inside of the list item which will link to show
 the specific ad the user clicked in ads.show.php -->
+	<!-- foreach ($ads as $ad) -->
+	
 <h1>All Ad's</h1>
 <hr>
     <ul>
-        <li><a href="#">Ad # 1 Women's Christian Louboutin, Sz 7</a></li>
+        <li><a href="ads.show.php">Ad # 1 Relic Silver Ball Grommet Belt</a></li>
+        <li><a href="ads.show.php">Ad # 1 Fun Shoe Ornaments</a></li>
+        <li><a href="ads.show.php">Ad # 1 Diamond Ring, 14 carat gold</a></li>
 
 
 
