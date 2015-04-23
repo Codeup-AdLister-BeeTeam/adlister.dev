@@ -7,15 +7,14 @@ if (empty($_POST)) {
 } 
 else if (!empty($_POST)) {
 
-	$query = 'INSERT INTO ads (headline, price, contact, category, description) 
-			VALUES (:headline, :price, :contact, :category, :description)';
+	$query = 'INSERT INTO ads (headline, price, description) 
+			VALUES (:headline, :price, :description)';
 	
 	$stmt = $dbc->prepare($query);
 	$stmt->bindValue(':headline', 	$_POST['headline'], 	PDO::PARAM_STR);
 	$stmt->bindValue(':price', 		$_POST['price'], 		PDO::PARAM_STR);
-	$stmt->bindValue(':contact', 	$_POST['contact'], 		PDO::PARAM_STR);
-	$stmt->bindValue(':category', $_POST['category'], 		PDO::PARAM_STR);
 	$stmt->bindValue(':description', $_POST['description'], PDO::PARAM_STR);
+
 	
 	$stmt->execute(); 
 
@@ -46,28 +45,28 @@ else if (!empty($_POST)) {
 		<form method="POST" action="ads.create.php">
 			<fieldset>
 				<legend>Your Item</legend>	
-				Headline of Ad: <input type="text" name="headline"><br>
-				Price: <input type="text" name="price"><br>
-				Description: <input type="text" name="description">
+				Headline of Ad: <input 	type="text" 	name="headline"><br>
+				Price: <input 			type="text" 	name="price"><br>
+				Description: <input 	type="text" 	name="description">
 			</fieldset>
 
 			<!-- <input id="location" 	placeholder="Enter location, i.e. Stone Oak, I-10 and Wurzbach"> -->
 
-			<fieldset>
+			<!-- <fieldset>
 				<legend>Item Categories</legend>
-				Women's Clothing <input type="checkbox" class="tags" name="category"><br>
-				Women's Shoes <input 	type="checkbox" class="tags" name="category"><br>
-				Men's Clothing <input 	type="checkbox" class="tags" name="category"><br>
-				Men's Shoes <input 		type="checkbox" class="tags" name="category"><br>
-				Jewelry <input 			type="checkbox" class="tags" name="category"><br>
-				Accessories <input 		type="checkbox" class="tags" name="category"><br>
-			</fieldset>
-			<fieldset>
+				Women's Clothing <input type="radio" 	class="tags" name="womensClothing"><br>
+				Women's Shoes <input 	type="radio" 	class="tags" name="womensShoes"><br>
+				Men's Clothing <input 	type="radio" 	class="tags" name="mensClothing"><br>
+				Men's Shoes <input 		type="radio" 	class="tags" name="mensShoes"><br>
+				Jewelry <input 			type="radio"  	class="tags" name="jewelry"><br>
+				Accessories <input 		type="radio" 	class="tags" name="accessories"><br>
+			</fieldset> -->
+			<!-- <fieldset>
 				<legend>Preferred Contact Method</legend>
-				Call <input type="checkbox"  class="tags" name="contact"><br>
-				Text <input type="checkbox"  class="tags" name="contact"><br>
-			    Email <input type="checkbox" class="tags" name="contact"><br>
-			</fieldset>
+				Call <input type="radio"  class="tags" name="call" placeholder="type call"><br>
+				Text <input type="radio"  class="tags" name="texting" placeholder="type text"><br>
+			    Email <input type="radio" class="tags" name="email" placeholder="type email"><br>
+			</fieldset> -->
 			<button type="submit">Submit Ad</button>
 		</form>
 	</div>
