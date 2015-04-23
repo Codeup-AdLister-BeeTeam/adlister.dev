@@ -43,7 +43,7 @@ else if (!empty($_POST)) {
 	 <h1>Create Your Ad</h1>
 	 <div>
 
-		<form method="POST" action="ads.edit.php">
+		<form method="POST" action="ads.create.php">
 			<fieldset>
 				<legend>Your Item</legend>	
 				Headline of Ad: <input type="text" name="headline"><br>
