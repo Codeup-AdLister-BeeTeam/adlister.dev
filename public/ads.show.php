@@ -1,6 +1,6 @@
 <?php 
 
-
+require_once '../bootstrap.php';
 
 // Require or include statements are allowed here.
 // All other code goes in the pageController function.
@@ -9,24 +9,15 @@
  *The pageController function handles all processing for this page.
  *@return array an associative array of data used in rendering the HTML view.
  */
-function pageController()
-{
-    // Initialize an empty data array.
-    
+    function pageController()
+    {
+         // Step One in controller, initialize array
+        $adsForShow = ['showAds' => Ads::all()];
+        
+        return $adsForShow;    
+    }
 
-    // Add data to be used in the HTML view.
-    $data['message'] = 'Hello Keyasha!';
-
-    // Return the completed data array.
-    return $data;
-
-}
-// Call the pageController function 
-// and extract all the returned array as local variables.
-
-extract(pageController());
-
-// Only use echo, conditionals and loops anywhere within the HTML.
+    extract(pageController());
 
 
 ?>
@@ -51,18 +42,21 @@ from the ad info/photos that they came to see -->
 </header>
 <!-- php foreach $ads as $ad, php each inside of the list item which will link to show
 the specific ad the user clicked in ads.show.php -->
-<h1>Clicked Ad Info</h1>
+<h1>Detail</h1>
 <hr>
-    <p class="ad-info">Relic Silver Ball Grommet Belt
-        <ul>
-            <li class="ad-info li">Price:      $5.00 </li>
-            <li class="ad-info li">Category:   Accessories</li>
-            <li class="ad-info li">Description: Synthetic leather with silver beading and nicely fashioned grommets.</li>
-            <li class="ad-info li">Contact Seller With: Phone Call</li>
 
-
-        </ul>
-    </p>
+    <?php foreach($showAds as $ad) { ?>
+        <?php if($ad['id'] == $_GET['id']) { ?>
+            <p class="ad-info"> <?= $ad['headline']; ?>
+                <ul>
+                    <li class="ad-info li"><?="Price: " . $ad['price']; ?></li>
+                    <li class="ad-info li"><?="Category: " . $ad['category']; ?></li>
+                    <li class="ad-info li"><?="Description: " . $ad['description']; ?></li>
+                    <li class="ad-info li"><?="Contact Seller With: " . $ad['contact']; ?></li>
+                </ul>
+            </p>
+        <?php } ?>
+    <?php } ?>
 
 <?php require_once '../views/partials/footer.php'; ?>
  </body>
