@@ -7,7 +7,7 @@ require_once 'BaseModel.php';
 
 class Ads extends BaseModel {
 
-	protected static $table = 'users';
+	protected static $table = 'ads';
 
 	protected function update()
     {
@@ -19,7 +19,7 @@ class Ads extends BaseModel {
         $stmt->bindValue(':id', 		$this->id, 				PDO::PARAM_STR);
         $stmt->bindValue(':headline', 	$this->headline, 		PDO::PARAM_STR);
         $stmt->bindValue(':price', 		$this->price, 			PDO::PARAM_STR);
-        $stmt->bindValue(':size', 		$this->size, 			PDO::PARAM_STR);
+        // $stmt->bindValue(':size', 		$this->size, 			PDO::PARAM_STR);
         $stmt->bindValue(':category', 	$this->category, 		PDO::PARAM_STR);
         $stmt->bindValue(':description', $this->description, 	PDO::PARAM_STR);
         $stmt->bindValue(':contact', 	$this->contact, 		PDO::PARAM_STR);
@@ -50,35 +50,5 @@ class Ads extends BaseModel {
         
     }
 
-       public static function all()
-    {
-        self::dbConnect();
-        
-        $query  = 'SELECT * FROM ads';
-        
-        $results = self::$dbc->query($query)->fetchAll(PDO::FETCH_ASSOC);
-        return $resultsAds;
-      
-    }
-
-        public function delete()
-    {
-        $id = $this->attributes['id'];
-        $query = "DELETE FROM ads
-        WHERE id = :id";
-        
-        $stmt = self::$dbc->prepare($query);
-        
-        $stmt->bindValue(':id', $id, PDO::PARAM_STR);
-        
-        $stmt->execute();
-        
-        echo "Deleted contact found at ID : " . $id;
-    }
 }
-
-}
-
-
-
 

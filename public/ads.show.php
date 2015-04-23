@@ -12,7 +12,7 @@
 function pageController()
 {
     // Initialize an empty data array.
-
+    
 
     // Add data to be used in the HTML view.
     $data['message'] = 'Hello Keyasha!';
@@ -53,8 +53,16 @@ from the ad info/photos that they came to see -->
 the specific ad the user clicked in ads.show.php -->
 <h1>Clicked Ad Info</h1>
 <hr>
-    <p>Ad # 1 Women's Christian Louboutin, Sz 7</p>
+    <p class="ad-info">Relic Silver Ball Grommet Belt
+        <ul>
+            <li class="ad-info li">Price:      $5.00 </li>
+            <li class="ad-info li">Category:   Accessories</li>
+            <li class="ad-info li">Description: Synthetic leather with silver beading and nicely fashioned grommets.</li>
+            <li class="ad-info li">Contact Seller With: Phone Call</li>
 
+
+        </ul>
+    </p>
 
 <?php require_once '../views/partials/footer.php'; ?>
  </body>
