@@ -1,8 +1,10 @@
 <?php 
+
+
 require '../bootstrap.php';
 
-// Require or include statements are allowed here.
-// All other code goes in the pageController function.
+
+$showAds = Ads::all();
 
 
 /*
@@ -30,12 +32,7 @@ function pageController()
 
 }
 
-// Call the pageController function 
-// and extract all the returned array as local variables.
-
 extract(pageController());
-
-// Only use echo, conditionals and loops anywhere within the HTML.
 
 $ads = Ads::all();
 
@@ -61,9 +58,12 @@ $ads = Ads::all();
 <h1 class="ad-show">All Ad's</h1>
 <hr>
     <ul>
-		<?php foreach ($ads as $ad) ?>
-			<li><a href="ads.show.php?show=clicked=<?php echo $ad['id'] . ' ' . $ad['headline']?>" </a></li>
+		<?php foreach ($ads as $ad): ?>
+
+
+			<li><a href="ads.show.php?show=clicked=<?php echo $ad['id']?>" </a><?= $ad['headline']; ?></li>
     
+        <?php endforeach; ?> 
 
       <!--   <li><a href="ads.show.php">1 Relic Silver Ball Grommet Belt</a></li>
         <li class="ad-show"><a id="ads-li" href="ads.show.php">2 Fun Shoe Ornaments</a></li>
