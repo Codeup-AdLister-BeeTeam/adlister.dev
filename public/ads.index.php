@@ -1,6 +1,5 @@
 <?php 
 require '../bootstrap.php';
-require 'Ads.php';
 
 // Require or include statements are allowed here.
 // All other code goes in the pageController function.
@@ -17,19 +16,17 @@ function pageController()
 	// Initialize an empty data array.
 	$ads = [];
 
-	require 'Ads.php';
-
 	// Add data to be used in the HTML view.
 	// $data['message'] = 'Hello Keyasha!';
 
-	if (!isset)$__GET['show'] {
-		var_dump($__GET);
+	// if ($__GET['show'] == 'clicked')) {
+	
 
-	}
+	// }
 
 
 	// Return the completed data array.
-	return $data;
+	return $ads;
 
 }
 
@@ -60,24 +57,22 @@ $ads = Ads::all();
         </div>
     </div>
 </header>
-<!-- php foreach $ads as $ad, php each inside of the list item which will link to show
-the specific ad the user clicked in ads.show.php -->
-	<!-- foreach ($ads as $ad) -->
 
-<h1>All Ad's</h1>
+<h1 class="ad-show">All Ad's</h1>
 <hr>
-		<?php foreach ($ads as $ad) ?>
-			<li><a href="ads.show.php?show=ad ?"><?= $ad[id] . " " . $ad[headline] . </a></li>');
     <ul>
-    	<!-- Must be able to show a particular ad on show page. Use adID. -->
-        <li><a href="ads.show.php">1 Relic Silver Ball Grommet Belt</a></li>
-        <li><a id="ads-li" href="ads.show.php">2 Fun Shoe Ornaments</a></li>
-        <li><a href="ads.show.php">3 Diamond Ring, 14 carat gold</a></li>
-        <li><a href="ads.show.php">4 Heart and charm stones necklace</a></li> 
-        <li><a href="ads.show.php">5 Fun shoes for a little girl</a></li> 
-        <li><a href="ads.show.php">6 Cute fun party or play dress</a></li> 
-        <li><a href="ads.show.php">7 LA Idol USA jeans, good condition</a></li> 
-        <li><a href="ads.show.php">8 Vera Bradley purse, blue flower design</a></li> 
+		<?php foreach ($ads as $ad) ?>
+			<li><a href="ads.show.php?show=clicked=<?php echo $ad['id'] . ' ' . $ad['headline']?>" </a></li>
+    
+
+      <!--   <li><a href="ads.show.php">1 Relic Silver Ball Grommet Belt</a></li>
+        <li class="ad-show"><a id="ads-li" href="ads.show.php">2 Fun Shoe Ornaments</a></li>
+        <li class="ad-show"><a href="ads.show.php">3 Diamond Ring, 14 carat gold</a></li>
+        <li class="ad-show"><a href="ads.show.php">4 Heart and charm stones necklace</a></li> 
+        <li class="ad-show"><a href="ads.show.php">5 Fun shoes for a little girl</a></li> 
+        <li class="ad-show"><a href="ads.show.php">6 Cute fun party or play dress</a></li> 
+        <li class="ad-show"><a href="ads.show.php">7 LA Idol USA jeans, good condition</a></li> 
+        <li class="ad-show"><a href="ads.show.php">8 Vera Bradley purse, blue flower design</a></li> --> 
          
         
 
