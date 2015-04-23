@@ -3,15 +3,13 @@
 
 require_once 'BaseModel.php';
 
-
-
 class Ads extends BaseModel {
 
 	protected static $table = 'ads';
 
 	protected function update()
     {
-        $query = "UPDATE contacts 
+        $query = "UPDATE ads 
         SET name = :name, email = :email, :phone, :houseNum, :street, :city, :state, :zipCode, :preferContact
         WHERE id = :id";
         $stmt = self::$dbc->prepare($query);
@@ -19,7 +17,6 @@ class Ads extends BaseModel {
         $stmt->bindValue(':id', 		$this->id, 				PDO::PARAM_STR);
         $stmt->bindValue(':headline', 	$this->headline, 		PDO::PARAM_STR);
         $stmt->bindValue(':price', 		$this->price, 			PDO::PARAM_STR);
-        // $stmt->bindValue(':size', 		$this->size, 			PDO::PARAM_STR);
         $stmt->bindValue(':category', 	$this->category, 		PDO::PARAM_STR);
         $stmt->bindValue(':description', $this->description, 	PDO::PARAM_STR);
         $stmt->bindValue(':contact', 	$this->contact, 		PDO::PARAM_STR);
@@ -30,15 +27,14 @@ class Ads extends BaseModel {
     }
     protected function insert()
      {   
-        $query = "INSERT INTO ads (id, headline, price, size, category, description, contact)
-        VALUES (:id, :headline, :price, :size, :cagetory, :description, :contact)";
+        $query = "INSERT INTO ads (id, headline, price, category, description, contact)
+        VALUES (:id, :headline, :price, :cagetory, :description, :contact)";
         
         $stmt = self::$dbc->prepare($query);
        
         $stmt->bindValue(':id', $this->id, PDO::PARAM_STR);
 		$stmt->bindValue(':headline', 	$this->headline, 		PDO::PARAM_STR);
         $stmt->bindValue(':price', 		$this->price, 			PDO::PARAM_STR);
-        $stmt->bindValue(':size', 		$this->size, 			PDO::PARAM_STR);
         $stmt->bindValue(':category', 	$this->category, 		PDO::PARAM_STR);
         $stmt->bindValue(':description', $this->description, 	PDO::PARAM_STR);
         $stmt->bindValue(':contact', 	$this->contact, 		PDO::PARAM_STR);
