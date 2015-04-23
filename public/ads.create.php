@@ -1,36 +1,26 @@
 <?php 
 
+require_once '../bootstrap.php';
 
-// Require or include statements are allowed here.
-// All other code goes in the pageController function.
+if (empty($_POST)) {
+	var_dump("I am empty");
+} 
+else if (!empty($_POST)) {
 
-/*
- *The pageController function handles all processing for this page.
- *@return array an associative array of data used in rendering the HTML view.
- */
-function pageController()
-{
-	// Initialize an empty data array.
+	$query = 'INSERT INTO ads (headline, price, contact, category, description) 
+			VALUES (:headline, :price, :contact, :category, :description)';
+	
+	$stmt = $dbc->prepare($query);
+	$stmt->bindValue(':headline', 	$_POST['headline'], 	PDO::PARAM_STR);
+	$stmt->bindValue(':price', 		$_POST['price'], 		PDO::PARAM_STR);
+	$stmt->bindValue(':contact', 	$_POST['contact'], 		PDO::PARAM_STR);
+	$stmt->bindValue(':category', $_POST['category'], 		PDO::PARAM_STR);
+	$stmt->bindValue(':description', $_POST['description'], PDO::PARAM_STR);
+	
+	$stmt->execute(); 
 
-
-	// Add data to be used in the HTML view.
-	$data['message'] = 'Hello Keyasha!';
-
-	// Return the completed data array.
-	return $data;
-
+	echo "Inserted ID: " . $dbc->lastInsertId() . PHP_EOL;
 }
-// Call the pageController function 
-// and extract all the returned array as local variables.
-
-extract(pageController());
-
-// Only use echo, conditionals and loops anywhere within the HTML.
-
-
-
-
-
 
 
  ?>
@@ -46,43 +36,37 @@ extract(pageController());
         <div class="header-content-inner">
             <h1>The intersection where fashion meets passion</h1>
             <hr>
-            <h2>::LOOKBOOKS::</h2>
+            <h2>Create Your Advertisement</h2>
         </div>
     </div>
 </header>
 	 <h1>Create Your Ad</h1>
 	 <div>
 
-		<form method="POST" action="">
+		<form method="POST" action="ads.edit.php">
 			<fieldset>
 				<legend>Your Item</legend>	
-				Title of Ad: <input type="text"><br>
-				Price: <input type="text"><br>
-				Size: <input type="text"><br>
-				Item Description: <input type="text">
+				Headline of Ad: <input type="text" name="headline"><br>
+				Price: <input type="text" name="price"><br>
+				Description: <input type="text" name="description">
 			</fieldset>
-		</form>
 
 			<!-- <input id="location" 	placeholder="Enter location, i.e. Stone Oak, I-10 and Wurzbach"> -->
 
-		<form method="POST" action="">
 			<fieldset>
 				<legend>Item Categories</legend>
-				Women's Clothing <input 	type="checkbox" class="tags"><br>
-				Women's Shoes <input 	type="checkbox" class="tags"><br>
-				Men's Clothing <input 	type="checkbox" class="tags"><br>
-				Men's Shoes <input 	type="checkbox" class="tags"><br>
-				Jewelry <input 	type="checkbox" class="tags"><br>
-				Accessories <input 	type="checkbox" class="tags"><br>
+				Women's Clothing <input type="checkbox" class="tags" name="category"><br>
+				Women's Shoes <input 	type="checkbox" class="tags" name="category"><br>
+				Men's Clothing <input 	type="checkbox" class="tags" name="category"><br>
+				Men's Shoes <input 		type="checkbox" class="tags" name="category"><br>
+				Jewelry <input 			type="checkbox" class="tags" name="category"><br>
+				Accessories <input 		type="checkbox" class="tags" name="category"><br>
 			</fieldset>
-		</form>
-			
-		<form method="POST" action="">
 			<fieldset>
 				<legend>Preferred Contact Method</legend>
-				Call <input type="checkbox"  class="tags"><br>
-				Text <input type="checkbox"  class="tags"><br>
-			    Email <input type="checkbox"  class="tags"><br>
+				Call <input type="checkbox"  class="tags" name="contact"><br>
+				Text <input type="checkbox"  class="tags" name="contact"><br>
+			    Email <input type="checkbox" class="tags" name="contact"><br>
 			</fieldset>
 			<button type="submit">Submit Ad</button>
 		</form>
