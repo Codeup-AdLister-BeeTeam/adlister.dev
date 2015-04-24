@@ -45,7 +45,10 @@ h2{
 .showad{
     background-color: #4108d4;
 }
-
+.userCreate {
+    margin-left: 20%;
+    margin-right: 20%;
+}
 
 .ad-info{
     text-align: center;
@@ -53,7 +56,11 @@ h2{
     font-size: 20px;
     color: #D6E4FA;
     text-align: 
-
 }
+
+.adsList {
+    text-align: center;
+}
+
 
       
