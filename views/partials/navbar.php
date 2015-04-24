@@ -8,24 +8,28 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand page-scroll" href="#page-top">Fashion A[d]venue</a>
+                <a class="navbar-brand page-scroll" href="index.php">Fashion A[d]venue</a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
                     <li>
-                        <a class="page-scroll" href="#about">About</a>
+                        <a class="page-scroll" href="about.php">About</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#services">Browse Ads</a>
+                        <a class="page-scroll" href="ads.index.php">Browse Ads</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#portfolio">Lookbooks</a>
+                        <a class="page-scroll" href="lookbooks.php">Lookbooks</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#contact">My Account</a>
+                        <a class="page-scroll" href="auth.login.php">My Account</a>
                     </li>
+                    <li>
+                        <a class="page-scroll" href="auth.logout.php">Logout</a>
+                    </li>
+                    
                 </ul>
             </div>
             <!-- /.navbar-collapse -->

@@ -1,4 +1,17 @@
 <?php 
+require_once '../bootstrap.php';
+
+// switch ($_SERVER['REQUEST_URI']) {
+//     case '/ads':
+//         include 'ads/index.php';
+//         break;
+//     case '/ads/show':
+//         include 'ads/show.php';
+//         break;
+//     default:
+//         include 'home.php';
+//         break;
+// }
 
  ?>
 
@@ -20,7 +33,7 @@
                     <h2 class="section-heading">We've got what you need!</h2>
                     <hr class="light">
                     <p class="text-faded">Looking for that hard to find vintage blouse or killer date night outfit? Have you created a beautiful accessory that's seeking a long term relationship with the perfetct outfit? Awesome, Stroll on over to Fashion A[d]Venue! As exclusive, eclectic and awesome as a trip down the runway, without the trip!</p>
-                    <a href="#" class="btn btn-default btn-xl">Get Started!</a>
+                    <a href="ads.index.php" class="btn btn-default btn-xl">Get Started!</a>
                 </div>
             </div>
         </div>
@@ -73,7 +86,7 @@
         <div class="container-fluid">
             <div class="row no-gutter">
                 <div class="col-lg-4 col-sm-6">
-                    <a href="#" class="portfolio-box">
+                    <a href="ads.index.php" class="portfolio-box">
                         <img src="/img/womensclothes.jpg" class="img-responsive" alt="">
                         <div class="portfolio-box-caption">
                             <div class="portfolio-box-caption-content">
@@ -89,8 +102,8 @@
                 </div>
                 <!-- Need to replace photo for men's clothes site went down -->
                 <div class="col-lg-4 col-sm-6">
-                    <a href="#" class="portfolio-box">
-                        <img src="/img/mensclothes.jpg" class="img-responsive" alt="">
+                    <a href="ads.index.php" class="portfolio-box">
+                        <img src="/img/mensclothes.jpeg" class="img-responsive" alt="">
                         <div class="portfolio-box-caption">
                             <div class="portfolio-box-caption-content">
                                 <div class="project-category text-faded">
@@ -104,7 +117,7 @@
                     </a>
                 </div>
                 <div class="col-lg-4 col-sm-6">
-                    <a href="#" class="portfolio-box">
+                    <a href="ads.index.php" class="portfolio-box">
                         <img src="/img/fashadvjewelry.jpg" class="img-responsive" alt="">
                         <div class="portfolio-box-caption">
                             <div class="portfolio-box-caption-content">
@@ -119,7 +132,7 @@
                     </a>
                 </div>
                 <div class="col-lg-4 col-sm-6">
-                    <a href="#" class="portfolio-box">
+                    <a href="ads.index.php" class="portfolio-box">
                         <img src="/img/mensshoes.jpg" class="img-responsive" alt="">
                         <div class="portfolio-box-caption">
                             <div class="portfolio-box-caption-content">
@@ -134,7 +147,7 @@
                     </a>
                 </div>
                 <div class="col-lg-4 col-sm-6">
-                    <a href="#" class="portfolio-box">
+                    <a href="ads.index.php" class="portfolio-box">
                         <img src="/img/bag.jpg" class="img-responsive" alt="">
                         <div class="portfolio-box-caption">
                             <div class="portfolio-box-caption-content">
@@ -149,7 +162,7 @@
                     </a>
                 </div>
                 <div class="col-lg-4 col-sm-6">
-                    <a href="#" class="portfolio-box">
+                    <a href="ads.index.php" class="portfolio-box">
                         <img src="/img/womensshoes.jpg" class="img-responsive" alt="">
                         <div class="portfolio-box-caption">
                             <div class="portfolio-box-caption-content">

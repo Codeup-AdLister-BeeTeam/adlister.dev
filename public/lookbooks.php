@@ -1,3 +1,9 @@
+<?php
+require_once '../bootstrap.php';
+
+
+?>
+
 <!DOCTYPE html>
 <html>
 
@@ -27,63 +33,63 @@
             </div>
 
             <div class="col-lg-2 col-md-4 col-xs-6 thumb">
-                <a class="thumbnail" href="#">
-                    <img class="img-responsive" src="http://placehold.it/400x300" alt="">
+                <a class="thumbnail">
+                    <img class="img-responsive" src="/img/fashlady1.jpg" alt="">
                 </a>
             </div>
             <div class="col-lg-2 col-md-4 col-xs-6 thumb">
-                <a class="thumbnail" href="#">
-                    <img class="img-responsive" src="http://placehold.it/400x300" alt="">
+                <a class="thumbnail">
+                    <img class="img-responsive" src="/img/mansuit1.png" alt="">
                 </a>
             </div>
             <div class="col-lg-2 col-md-4 col-xs-6 thumb">
-                <a class="thumbnail" href="#">
-                    <img class="img-responsive" src="http://placehold.it/400x300" alt="">
+                <a class="thumbnail">
+                    <img class="img-responsive" src="/img/shades.jpg" alt="">
                 </a>
             </div>
             <div class="col-lg-2 col-md-4 col-xs-6 thumb">
-                <a class="thumbnail" href="#">
-                    <img class="img-responsive" src="http://placehold.it/400x300" alt="">
+                <a class="thumbnail">
+                    <img class="img-responsive" src="/img/vintagetees.jpg" alt="">
                 </a>
             </div>
             <div class="col-lg-2 col-md-4 col-xs-6 thumb">
-                <a class="thumbnail" href="#">
-                    <img class="img-responsive" src="http://placehold.it/400x300" alt="">
+                <a class="thumbnail">
+                    <img class="img-responsive" src="/img/mansuit2.jpg" alt="">
                 </a>
             </div>
             <div class="col-lg-2 col-md-4 col-xs-6 thumb">
-                <a class="thumbnail" href="#">
-                    <img class="img-responsive" src="http://placehold.it/400x300" alt="">
+                <a class="thumbnail">
+                    <img class="img-responsive" src="/img/accessory1.jpg" alt="">
                 </a>
             </div>
             <div class="col-lg-2 col-md-4 col-xs-6 thumb">
-                <a class="thumbnail" href="#">
-                    <img class="img-responsive" src="http://placehold.it/400x300" alt="">
+                <a class="thumbnail">
+                    <img class="img-responsive" src="/img/blues.jpg" alt="">
                 </a>
             </div>
             <div class="col-lg-2 col-md-4 col-xs-6 thumb">
-                <a class="thumbnail" href="#">
-                    <img class="img-responsive" src="http://placehold.it/400x300" alt="">
+                <a class="thumbnail">
+                    <img class="img-responsive" src="/img/girlbow.jpg" alt="">
                 </a>
             </div>
             <div class="col-lg-2 col-md-4 col-xs-6 thumb">
-                <a class="thumbnail" href="#">
-                    <img class="img-responsive" src="http://placehold.it/400x300" alt="">
+                <a class="thumbnail">
+                    <img class="img-responsive" src="/img/mansuit3.jpg" alt="">
                 </a>
             </div>
             <div class="col-lg-2 col-md-4 col-xs-6 thumb">
-                <a class="thumbnail" href="#">
-                    <img class="img-responsive" src="http://placehold.it/400x300" alt="">
+                <a class="thumbnail">
+                    <img class="img-responsive" src="/img/burberry.jpg" alt="">
                 </a>
             </div>
             <div class="col-lg-2 col-md-4 col-xs-6 thumb">
-                <a class="thumbnail" href="#">
-                    <img class="img-responsive" src="http://placehold.it/400x300" alt="">
+                <a class="thumbnail">
+                    <img class="img-responsive" src="/img/grafitti.jpg" alt="">
                 </a>
             </div>
             <div class="col-lg-2 col-md-4 col-xs-6 thumb">
-                <a class="thumbnail" href="#">
-                    <img class="img-responsive" src="http://placehold.it/400x300" alt="">
+                <a class="thumbnail">
+                    <img class="img-responsive" src="/img/versace.jpeg" alt="">
                 </a>
             </div>
         </div>
@@ -95,7 +101,7 @@
             <div class="row no-gutter">
                 <div class="col-md-6">
                     <a href="#" class="portfolio-box">
-                        <img src="/img/falllrg.jpg" class="img-responsive" alt="">
+                        <img src="/img/ladyfall.png" class="img-responsive" alt="">
                         <div class="portfolio-box-caption">
                             <div class="portfolio-box-caption-content">
                                 <div class="project-category text-faded">
@@ -110,7 +116,7 @@
                 </div>
                 <div class="col-md-6">
                     <a href="#" class="portfolio-box">
-                        <img src="https://unsplash.it/650/350?image=473" class="img-responsive" alt="">
+                        <img src="/img/manwinter.jpg" class="img-responsive" alt="">
                         <div class="portfolio-box-caption">
                             <div class="portfolio-box-caption-content">
                                 <div class="project-category text-faded">
@@ -125,7 +131,7 @@
                 </div>
                 <div class="col-md-6">
                     <a href="#" class="portfolio-box">
-                        <img src="/img/springlrg.jpg" class="img-responsive" alt="">
+                        <img src="/img/spring.jpg" class="img-responsive" alt="">
                         <div class="portfolio-box-caption">
                             <div class="portfolio-box-caption-content">
                                 <div class="project-category text-faded">

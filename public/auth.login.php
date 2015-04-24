@@ -1,64 +1,78 @@
 <?php 
-
-session_start();
-
-// require_once '/auth.php'; --causes an error cant find file
+require_once '../bootstrap.php';
 
 
-// $message = 'Please login.';
 
-// var_dump($POST) . PHP_EOL; --causes an error undefined variable POST
-
-// ***************************
-// Require or include statements are allowed here.
-// All other code goes in the pageController function.
-
-/*
- *The pageController function handles all processing for this page.
- *@return array an associative array of data used in rendering the HTML view.
- */
-function pageController()
+if (Auth::check()) 
+    {
+    header("Location:users.show.php");
+    exit();
+    } 
+if(!empty($_POST))
 {
-	// Initialize an empty data array.
 
+    $username = Input::has('username') ? Input::get('username') : '';
+    $password = Input::has('password') ? Input::get('password') : '';
 
-	// Add data to be used in the HTML view.
-	$data['username'] = 'Hello Keyasha!';
+    if ($username == '' && $password == '') {
+        echo "Please enter your username and password";
 
-	// Return the completed data array.
-	return $data;
+    } else if(Auth::attempt($username, $password)) {
+        header("Location:users.show.php");
+        exit();
+    }else {
+        echo "Sorry, login failed.";
+    }
 
 }
-// Call the pageController function 
-// and extract all the returned array as local variables.
-
-extract(pageController());
-
-// Only use echo, conditionals and loops anywhere within the HTML.
-
-// ************************
-
-
 
 ?>
 <html>
 <?php require_once '../views/partials/head.php'; ?>
 <body>
 <?php require_once '../views/partials/navbar.php'; ?>
-<?php require_once '../views/partials/header.php'; ?>
+<header class="lookbook">
+    <div class="header-content">
+        <div class="header-content-inner">
+            <h1>The intersection where fashion meets passion</h1>
+        </div>
+    </div>
+</header>
 
-
-	<h1><?= $username ?></h1>
+	<h1>Welcome To Fashion A[d]venue!</h1>
 <!-- change forms to bootstrap forms see ads.create2.php -->
-	<form metho="POST" action="/login.php">
-		<label for="email" >Email</label>
-		<input id="email" name="email" type="text"><br>
-
-		<label for="password">Password</label>
-        <input id="password" name="password" type="password"><br>
-        
-        <input type="submit">
-	</form>
+<hr>
+	<div class="container">
+      <h1>Sign In</h1>
+      <form method="POST" action="auth.login.php" class="form-horizontal">
+	    <div class="form-group">
+	      <label for="inputUsername" class="col-sm-2 control-label">Username</label>
+	      <div class="col-sm-10">
+	        <input type="text" name="username"class="form-control" id="inputUsername" placeholder="Enter Username">
+	      </div>
+	    </div>
+	    <div class="form-group">
+	      <label for="inputPassword" class="col-sm-2 control-label">Password</label>
+	      <div class="col-sm-10">
+	        <input type="password" name="password" class="form-control" id="inputPassword" placeholder="Enter Password">
+	      </div>
+	    </div>
+	    <div class="form-group">
+	      <div class="col-sm-10">
+	        <button type="submit" class="btn btn-default form-btn">Sign In</button>
+	      </div>
+    </div>
+	   </form>
+	</div>
+    <hr>
+    <aside class="bg-dark">
+        <div class="container text-center">
+            <div class="call-to-action">
+                <h2>No Account? Sign Up And Become A Design Partner Today!</h2>
+                <a href="users.create.php" class="btn btn-default btn-xl wow tada">Sign Up</a>
+            </div>
+        </div>
+    </aside>
 
 <?php require_once '../views/partials/footer.php'; ?>
 </body>

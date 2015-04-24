@@ -1,38 +1,29 @@
 <?php 
+require_once '../bootstrap.php';
 
-// Require or include statements are allowed here.
-// All other code goes in the pageController function.
+    Auth::logout();
+    header("Location:index.php");
+    exit();
+    
 
-/*
- *The pageController function handles all processing for this page.
- *@return array an associative array of data used in rendering the HTML view.
- */
-function pageController()
-{
-	// Initialize an empty data array.
-
-
-	// Add data to be used in the HTML view.
-	$data['message'] = 'Hello Keyasha!';
-
-	// Return the completed data array.
-	return $data
-
-}
-// Call the pageController function 
-// and extract all the returned array as local variables.
-
-extract(pageController());
-
-// Only use echo, conditionals and loops anywhere within the HTML.
-
+var_dump(session_id());
 
  ?>
  <html>
- <head>
- 	<title>WE ROCK!</title>
- </head>
+ <?php require_once '../views/partials/head.php'; ?>
  <body>
- 	<?php echo $message; ?>
+ <?php require_once '../views/partials/navbar.php'; ?>
+
+ 	<header class="lookbook">
+        <div class="header-content">
+            <div class="header-content-inner">
+                <h1>The intersection where fashion meets passion</h1>
+            </div>
+        </div>
+    </header>
+    <h1></h1>
+    <!-- header redirect back to main page  can I have a time delay before the redirect issues?-->
+ <?php require_once '../views/partials/footer.php'; ?>
+
  </body>
  </html>
