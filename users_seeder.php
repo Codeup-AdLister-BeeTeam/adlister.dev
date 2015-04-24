@@ -3,90 +3,75 @@
 // EXERCISE 9.1.4 Prepared Statememts, Dynamic Queries and User Input
 // EXERCISE 9.9 Adlister project 
 
-require 'db_connect.php'; 
+require_once 'bootstrap.php';
 
-// $dbc->exec('DROP TABLE IF EXISTS users');
+$dbc->exec('TRUNCATE TABLE users');
 
 $users = [];
 
 $users = [
-	['firstName' => 'Mic',
-	'lastName' => 'Jagger',
+	['userName' => 'Mic',
+	'password' => 'pass',
 	'email' => 'Micky@gmail.com',
 	'phone' => '2108541466',
-	'houseNum' => '123',
-	'street' => 'Monticello',
-	'city' => 'San Antonio',
-	'state' => 'TX',
-	'zipCode' => '78212',
-	'preferContact' => 'call'
+	'preferContact' => 'call',
+	'firstName' => 'Mic',
+	'lastName' => 'Jagger',
+	'zipCode' => '78212'
 	],
-	['firstName' => 'Kermit',
-	'lastName' => 'Frog',
+	['userName' => 'Kermie',
+	'password' => 'pass',
 	'email' => 'paulasatx@gmail.com',
 	'phone' => '2101111111',
-	'houseNum' => '564',
-	'street' => 'Lilly Pad',
-	'apartment' => '4',
-	'city' => 'San Antonio',
-	'state' => 'TX',
-	'zipCode' => '78201',
-	'preferContact' => 'email'
+	'preferContact' => 'email',
+	'firstName' => 'Kermit',
+	'lastName' => 'Frog',
+	'zipCode' => '78201'
 	],
-	['firstName' => 'Leah',
-	'lastName' => 'Skywalker',
+	['userName' => 'Princess',
+	'password' => 'pass',
 	'email' => 'paulabox2@gmail.com',
 	'phone' => '2107777777',
-	'houseNum' => '7',
-	'street' => 'Galaxy',
-	'city' => 'San Antonio',
-	'state' => 'TX',
-	'zipCode' => '78209',
-	'preferContact' => 'email'
+	'preferContact' => 'email',
+	'firstName' => 'Leah',
+	'lastName' => 'Skywalker',
+	'zipCode' => '78209'
 	],
-	['firstName' => 'Julian',
-	'lastName' => 'Castro',
+	['userName'=> 'prez',
+	'password' => 'pass',
 	'email' => 'thebettertwin@gmail.com',
 	'phone' => '2102102100',
-	'houseNum' => '1600',
-	'street' => 'Pennsylvania Avenue',
-	'city' => 'San Antonio',
-	'state' => 'TX',
-	'zipCode' => '78205',
-	'preferContact' => 'text'
+	'preferContact' => 'text',
+	'firstName' => 'Julian',
+	'lastName' => 'Castro',
+	'zipCode' => '78205'
 	],
-	['firstName' => 'Johnny',
-	'lastName' => 'Appleseed',
+	['userName' => 'seedy',
+	'password' => 'pass',
 	'email' => 'apples@gmail.com',
 	'phone' => '2109992100',
-	'houseNum' => '1',
-	'street' => 'Apple Avenue',
-	'city' => 'San Antonio',
-	'state' => 'TX',
-	'zipCode' => '78210',
-	'preferContact' => 'email'
+	'preferContact' => 'email',
+	'firstName' => 'Johnny',
+	'lastName' => 'Appleseed',
+	'zipCode' => '78210'
 	],
 ];
  
 // with id auto-incrementing via function in migration file. 
-$stmt = $dbc->prepare('INSERT INTO users (firstName, lastName, 
-	email, phone, houseNum, street, city, state, zipCode, preferContact) 
-	VALUES (:firstName, :lastName, :email, :phone, :houseNum, 
-		:street, :city, :state, :zipCode, :preferContact)');
+$stmt = $dbc->prepare('INSERT INTO users (userName, password, email, phone, preferContact, firstName, lastName, zipCode) 
+	VALUES (:userName, :password, :email, :phone, :preferContact, :firstName, :lastName, :zipCode)');
 
 
 foreach ($users as $user) {
     $stmt->bindValue(':userName',         	$user['userName'],         PDO::PARAM_STR);
-    $stmt->bindValue(':firstName',          $user['firstName'],        PDO::PARAM_STR);
-    $stmt->bindValue(':lastName', 			$user['lastName'], 			PDO::PARAM_STR);
+    $stmt->bindValue(':password',         	$user['password'],         PDO::PARAM_STR);
     $stmt->bindValue(':email',    			$user['email'],   			PDO::PARAM_STR);
     $stmt->bindValue(':phone',      		$user['phone'],      		PDO::PARAM_STR);
-    $stmt->bindValue(':houseNum',			$user['houseNum'],			PDO::PARAM_STR);
-    $stmt->bindValue(':street',				$user['street'],			PDO::PARAM_STR);
-    $stmt->bindValue(':city',				$user['city'],				PDO::PARAM_STR);
-    $stmt->bindValue(':state', 				$user['state'],				PDO::PARAM_STR);
-    $stmt->bindValue(':zipCode',			$user['zipCode'],			PDO::PARAM_STR);
     $stmt->bindValue(':preferContact',		$user['preferContact'],		PDO::PARAM_STR);
+    $stmt->bindValue(':firstName',          $user['firstName'],        PDO::PARAM_STR);
+    $stmt->bindValue(':lastName', 			$user['lastName'], 			PDO::PARAM_STR);
+    $stmt->bindValue(':zipCode',			$user['zipCode'],			PDO::PARAM_STR);
+    
 
     $stmt->execute();
 }

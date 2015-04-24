@@ -1,5 +1,5 @@
 <?php 
-
+//  *** THIS IS NOT THE LIVING COPY
 
 // Require or include statements are allowed here.
 // All other code goes in the pageController function.

@@ -45,43 +45,43 @@ else if (!empty($_POST)) {
 <h1 class="userCreate">Register Your Account</h1>
 	<form>
         <div class="userCreate form-group">
+            <label for="userName"></label>
             <input type="text" name="userName" class="form-control" id="userName" placeholder="userName">
         </div>
         <div class="userCreate form-group">
-            <label for="password">Password</label>
+            <label for="password"></label>
             <input type="text" name="password" class="form-control" id="password" placeholder="Password">
         </div>
         <div class="userCreate form-group">
-            <label for="email">Email</label>
+            <label for="email"></label>
             <input type="text" name="email" class="form-control" id="email" placeholder="Email">
         </div>
         <div class="userCreate form-group">
-            <label for="phone">Phone</label>
+            <label for="phone"></label>
             <input type="text" name="phone" class="form-control" id="phone" placeholder="Phone">
         </div>
         <div class="userCreate form-group">
-            <label for="firstName">First Name</label>
-            <input type="text" name="firstName" class="form-control" id="firstName" placeholder="Phone">
+            <label for="firstName"></label>
+            <input type="text" name="firstName" class="form-control" id="firstName" placeholder="First Name">
         </div>
         <div class="userCreate form-group">
-            <label for="lastName">Last Name</label>
+            <label for="lastName"></label>
             <input type="text" name="lastName" class="form-control" id="lastName" placeholder="Last Name">
         </div>
         <div class="userCreate form-group">
-            <label for="zipCode">Zip Code</label>
+            <label for="zipCode"></label>
             <input type="text" name="zipCode" class="form-control" id="zipCode" placeholder="Zip Code">
         </div>
 
-                            <div class="userCreate form-group">
-                                <label for="image">File input</label>
-                                <input type="file" name="image" id="image">
-                              <p class="help-block">Example block-level help text here.</p>
-                            </div>
-                    <div class="userCreate checkbox">
-                        <label for="remember id'"remember>Remember Me</label>
-                        <input type="checkbox" name="remember">
-                    </div>
-        <button type="submit" class="btn btn-default">Submit</button>
+        <div class="userCreate form-group">
+            <label for="image">File input</label>
+            <input type="file" name="image" id="image">
+        </div>
+        <!-- <div class="userCreate checkbox">
+            <label for="remember id'"remember>Remember Me</label>
+            <input type="checkbox" name="remember">
+        </div> -->
+        <button type="submit" class="userCreate btn-submit btn-default">Submit</button>
     </form>
 
 </body>

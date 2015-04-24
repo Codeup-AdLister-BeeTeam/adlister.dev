@@ -13,8 +13,6 @@ $query = 'CREATE TABLE IF NOT EXISTS ads (
     contact VARCHAR(6) NOT NULL,
     category VARCHAR(20) NOT NULL,
     description VARCHAR(100) NOT NULL,
-    startDate DATE,
-    endDate DATE,
     PRIMARY KEY (id)
 )';
 
