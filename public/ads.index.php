@@ -33,20 +33,22 @@ extract(pageController());
         </div>
     </div>
 </header>
-
-<h1 class="ad-show">All Ad's</h1>
 <hr>
-    <ul>
+<div class="adsList">
+<h1 class="ad-show">All Ads</h1>
+
+    <p>
 		<?php foreach ($showAds as $ad): ?>
 
-			<li><a href="ads.show.php?id=<?=$ad['id']?>"</a><?= $ad['headline']; ?></li>
+			<span class="adsList"><a href="ads.show.php?id=<?=$ad['id']?>"</a><?= $ad['headline']; ?><br></span>
             
         <?php endforeach; ?> 
 
-    </ul>
+    </p>
 
 
 <?php require_once '../views/partials/footer.php'; ?>
+</div>
  </body>
  </html>
 
