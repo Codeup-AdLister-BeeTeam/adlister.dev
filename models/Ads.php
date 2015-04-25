@@ -10,8 +10,12 @@ class Ads extends BaseModel {
 	protected function update()
     {
         $query = "UPDATE ads 
-        SET name = :name, email = :email, :phone, :houseNum, :street, :city, :state, :zipCode, :preferContact
+        SET id = :id, headline = :headline, price = :price, category = :category, 
+        description = :descriptionn, contact = :contact 
+        phone = :phone, preferContact = :preferContact, zipCode = :zipCode
         WHERE id = :id";
+        // Edited above because it had user fields, so I kept the formatting, but
+        // changed to ads fields. not tested yet.
         $stmt = self::$dbc->prepare($query);
 
         $stmt->bindValue(':id', 		$this->id, 				PDO::PARAM_STR);

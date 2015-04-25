@@ -11,7 +11,7 @@ $ads = [
 	[
 		'headline' => 'Relic Silver Ball Grommet Belt',
 		'price' => '5.00',
-		// 'size' => 'L',
+		
 		'category' => 'accessories',
 		'description'  => 'Synthetic leather with silver beading and nicely fashioned grommets.',
 		'contact' => 'call'
@@ -19,7 +19,7 @@ $ads = [
 	[
 		'headline' => 'Fun Shoe Ornaments',
 		'price' => '10.00',
-		// 'size' => 'NA',
+		
 		'category' => 'shoes',
 		'description' => '3/4 inches long, various ornaments, total of 20 pieces',
 		'contact' => 'email'
@@ -27,7 +27,7 @@ $ads = [
 	[
 		'headline' => 'Diamond Ring, 14 carat gold',
 		'price' => '300.00',
-		// 'size' => '7',
+		
 		'category' => 'jewelry',
 		'description' => 'Estate sale ring, appraised at $400 by Americus Diamond',
 		'contact' => 'text'
@@ -35,7 +35,7 @@ $ads = [
 	[
 		'headline' => 'Heart and charm stones necklace',
 		'price' => '10.00',
-		// 'size' => '16',
+		
 		'category' => 'jewelry',
 		'description' => 'Never worn. Sterling silver with curbic zirconia',
 		'contact' => 'text'
@@ -43,7 +43,7 @@ $ads = [
 	[
 		'headline' => 'Fun shoes for a little girl',
 		'price' => '10.00',
-		// 'size' => '7',
+		
 		'category' => 'shoes',
 		'description' => 'Crafted by KB Designs, sure to please',
 		'contact' => 'text'
@@ -51,7 +51,7 @@ $ads = [
 	[
 		'headline' => 'Cute fun party or play dress.',
 		'price' => '20.00',
-		// 'size' => '2',
+		
 		'category' => 'clothing',
 		'description' => 'Cute party dress or make believe dress! Top is cotton.',
 		'contact' => 'text'
@@ -59,7 +59,7 @@ $ads = [
 	[
 		'headline' => 'LA Idol USA jeans, good condition',
 		'price' => '18.00',
-		// 'size' => '11',
+		
 		'category' => 'clothing',
 		'description' => 'Great jeans for a night out',
 		'contact' => 'text'
@@ -67,7 +67,7 @@ $ads = [
 	[
 		'headline' => 'Vera Bradley purse, blue flower design',
 		'price' => '20.00',
-		// 'size' => 'One',
+		
 		'category' => 'accessories',
 		'description' => 'Shoulder bag, very nice condition',
 		'contact' => 'text'	
